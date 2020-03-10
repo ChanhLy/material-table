@@ -146,20 +146,11 @@ export class MTableToolbar extends React.Component {
             <Tooltip title={localization.exportTitle}>
               <IconButton
                 color="inherit"
-                onClick={event => this.setState({ exportButtonAnchorEl: event.currentTarget })}
+                onClick={this.exportCsv}
                 aria-label={localization.exportAriaLabel}>
                 <this.props.icons.Export />
               </IconButton>
             </Tooltip>
-            <Menu
-              anchorEl={this.state.exportButtonAnchorEl}
-              open={Boolean(this.state.exportButtonAnchorEl)}
-              onClose={() => this.setState({ exportButtonAnchorEl: null })}
-            >
-              <MenuItem key="export-csv" onClick={this.exportCsv}>
-                {localization.exportName}
-              </MenuItem>
-            </Menu>
           </span>
 
         }
